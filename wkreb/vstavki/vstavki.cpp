@@ -22,11 +22,11 @@ void bubble(float* arr, int size) // пузырек с остановкой
 				swap(&arr[j], &arr[j + 1]);
 			}
 			flag = 1;
-			if (flag == 0)
+		}
+		if (flag == 0)
 			{
 				return;
 			}
-		}
 	}
 }
 void Insert(float* arr, int size) // вставками
@@ -49,14 +49,14 @@ void Insert(float* arr, int size) // вставками
 void comb(float* arr, int size) // расческой
 {
 	float factor = 1.247; // число - фактор уменьшения
-	int step = size - 1;
-	while (step != 0)
+	float step = size - 1;
+	while (step > 1)
 	{
 		for (int i = 0; i + step < size; i++)
 		{
-			if (arr[i] > arr[i + step])
+			if (arr[i] > arr[i + (int)step])
 			{
-				swap(&arr[i], &arr[i + step]);
+				swap(&arr[i], &arr[i + (int)step]);
 			}
 		}
 		step /= factor;
